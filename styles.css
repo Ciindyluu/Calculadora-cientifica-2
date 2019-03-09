@@ -1,0 +1,44 @@
+.calculadora{
+    display: block;
+    margin: 0 auto;
+    padding: 65px;
+    background-color: rgb(70, 121, 179);
+    width: 520px;
+    height: 450px;
+    border-radius: 24px;
+    align-content: center;
+}
+
+.calculadora td button {
+    display: block;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    border-radius: 100%;
+}
+
+#resultado{
+    display: block;
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 25px;
+    width: 500px;
+    height: 125px;
+    line-height: 75px;
+    background-color: white;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+#resultado2{
+    display: block;
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 25px;
+    width: 500px;
+    height: 50px;
+    line-height: 75px;
+    background-color: white;
+    border-radius: 25px;
+    padding: 10px;
+}
