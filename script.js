@@ -37,7 +37,9 @@ function init() {
     var nueve = document.getElementById("nueve");
     var cero = document.getElementById("cero");
 
+    
     //FUNCIONALIDAD
+
 
     uno.onclick = function (e) {
         resultado.textContent = resultado.textContent + "1"
@@ -174,7 +176,7 @@ function init() {
     }
 
     sign.onclick = function (e) {
-        resultado2.textContent = resultado2 + " +- "
+        resultado2.textContent = resultado2 + " ± "
     }
 
 
@@ -404,14 +406,14 @@ function init() {
             operacion = "sign"
             var cantidad1 = operando1
             resolver()
-            resultado2.textContent = cantidad1 + " +- = " + resultado.textContent
+            resultado2.textContent = cantidad1 + " ± = " + resultado.textContent
         }
         else {
             operando1 = resultado.textContent
             operacion = "sign"
             var result = resultado2.textContent
             resolver()
-            resultado2.textContent = result + " +- = " + resultado.textContent
+            resultado2.textContent = result + " ± = " + resultado.textContent
         }
     };
 
@@ -531,11 +533,7 @@ function init() {
                 res = parseFloat(operando1) * (3.14159265358979323846)
                 break;
 
-            //FALTA CORREGIR ESTE CASE DEL SIGNO CONTRARIO +-
-
             case "sign":
-                console.log(operando1)
-                console.log(parseFloat(operando1))
                 res = parseFloat(operando1) * -1
         }
 
