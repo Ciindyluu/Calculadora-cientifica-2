@@ -125,6 +125,7 @@ function init() {
     }
 
     resta.onclick = function (e) {
+        resultado.textContent = resultado.textContent + " - "
         resultado2.textContent = resultado2.textContent + " - "
     }
 
@@ -214,10 +215,17 @@ function init() {
             limpiar()
         }
         else {
-            operando1 = resultado.textContent
-            operacion = "-"
-            limpiar()
-            resultado2.textContent = resultado2.textContent + " - "
+            if (resultado.textContent == " ") {
+                operando1 = "-" + resultado.textContent.trim()
+                resultado.textContent = operando1
+                resultado2.textContent = operando1
+            }
+            else {
+                operando1 = resultado.textContent
+                operacion = "-"
+                limpiar()
+                resultado2.textContent = resultado2.textContent + " - "
+            }
         }
     };
 
@@ -393,15 +401,17 @@ function init() {
     sign.onclick = function (e) {
         if (resultado2.textContent.includes("=")) {
             operando1 = resultado2.textContent.split('=')[1]
-            resultado2.textContent = operando1 + " +- "
             operacion = "sign"
-            limpiar()
+            var cantidad1 = operando1
+            resolver()
+            resultado2.textContent = cantidad1 + " +- = " + resultado.textContent
         }
         else {
             operando1 = resultado.textContent
             operacion = "sign"
-            limpiar()
-            resultado2.textContent = resultado2.textContent + " +- "
+            var result = resultado2.textContent
+            resolver()
+            resultado2.textContent = result + " +- = " + resultado.textContent
         }
     };
 
@@ -456,11 +466,11 @@ function init() {
 
 
     function resetear() {
-        resultado.textContent = " "
-        resultado2.textContent = " "
+        resultado.textContent = ""
+        resultado2.textContent = ""
         operando1 = 0
         operando2 = 0
-        operacion = " "
+        operacion = ""
     };
 
     function quitaUno() {
@@ -524,8 +534,9 @@ function init() {
             //FALTA CORREGIR ESTE CASE DEL SIGNO CONTRARIO +-
 
             case "sign":
-                res = parseFloat(operando1) ** parseFloat(operando2)
-                break;
+                console.log(operando1)
+                console.log(parseFloat(operando1))
+                res = parseFloat(operando1) * -1
         }
 
         resetear()
