@@ -5,6 +5,10 @@ var operacion
 function init() {
     var resultado = document.getElementById("resultado");
     var reset = document.getElementById("reset");
+    var resultado2 = document.getElementById("resultado2");
+    var borrar = document.getElementById("borrar");
+    var quitarUno = document.getElementById("quitarUno");
+
 
     var suma = document.getElementById("suma");
     var resta = document.getElementById("resta");
@@ -13,7 +17,15 @@ function init() {
     var residuo = document.getElementById("residuo");
     var exponencial = document.getElementById("exponencial");
     var igual = document.getElementById("igual");
+    var raiz = document.getElementById("raiz");
+    var factorial = document.getElementById("factorial");
+    var factorialSuma = document.getElementById("factorialSuma");
+    var alCuadrado = document.getElementById("alCuadrado");
+    var sign = document.getElementById("sign");
+    var alCubo = document.getElementById("alCubo");
+    var pi = document.getElementById("pi");
 
+    var punto = document.getElementById("punto");
     var uno = document.getElementById("uno");
     var dos = document.getElementById("dos");
     var tres = document.getElementById("tres");
@@ -97,6 +109,17 @@ function init() {
         parseFloat(resultado2.textContent);
     }
 
+    punto.onclick = function (e) {
+        if (resultado.textContent.includes(".")) {
+            resultado.textContent = resultado.textContent
+            resultado2.textContent = resultado2.textContent
+        }
+        else {
+            resultado.textContent = resultado.textContent + "."
+            resultado2.textContent = resultado2.textContent + "."
+        }
+    }
+
     suma.onclick = function (e) {
         resultado2.textContent = resultado2.textContent + " + "
     }
@@ -149,17 +172,29 @@ function init() {
         resultado2.textContent = resultado2.textContent + " = "
     }
 
+    sign.onclick = function (e) {
+        resultado2.textContent = resultado2 + " +- "
+    }
+
 
     //OPERACIONES
+
+    borrar.onclick = function (e) {
+        limpiar()
+    };
 
     reset.onclick = function (e) {
         resetear()
     };
 
+    quitarUno.onclick = function (e) {
+        quitaUno()
+    }
+
     suma.onclick = function (e) {
         if (resultado2.textContent.includes("=")) {
             operando1 = resultado2.textContent.split('=')[1]
-            resultado2.textContent= operando1 + " + "
+            resultado2.textContent = operando1 + " + "
             operacion = "+"
             limpiar()
         }
@@ -172,74 +207,266 @@ function init() {
     };
 
     resta.onclick = function (e) {
-        operando1 = resultado.textContent
-        operacion = "-"
-        limpiar()
-        resultado2.textContent = resultado2.textContent + " - "
         if (resultado2.textContent.includes("=")) {
             operando1 = resultado2.textContent.split('=')[1]
+            resultado2.textContent = operando1 + " - "
+            operacion = "-"
+            limpiar()
+        }
+        else {
+            operando1 = resultado.textContent
+            operacion = "-"
+            limpiar()
+            resultado2.textContent = resultado2.textContent + " - "
         }
     };
 
     multiplicacion.onclick = function (e) {
-        operando1 = resultado.textContent
-        operacion = "*"
-        limpiar()
-        resultado2.textContent = resultado2.textContent + " * "
         if (resultado2.textContent.includes("=")) {
             operando1 = resultado2.textContent.split('=')[1]
+            resultado2.textContent = operando1 + " * "
+            operacion = "*"
+            limpiar()
+        }
+        else {
+            operando1 = resultado.textContent
+            operacion = "*"
+            limpiar()
+            resultado2.textContent = resultado2.textContent + " * "
         }
     };
 
     division.onclick = function (e) {
-        operando1 = resultado.textContent
-        operacion = "/"
-        limpiar()
-        resultado2.textContent = resultado2.textContent + " / "
         if (resultado2.textContent.includes("=")) {
             operando1 = resultado2.textContent.split('=')[1]
+            resultado2.textContent = operando1 + " / "
+            operacion = "/"
+            limpiar()
+        }
+        else {
+            operando1 = resultado.textContent
+            operacion = "/"
+            limpiar()
+            resultado2.textContent = resultado2.textContent + " / "
         }
     };
 
     residuo.onclick = function (e) {
-        operando1 = resultado.textContent
-        operacion = "%"
-        limpiar()
-        resultado2.textContent = resultado2.textContent + " % "
-        if (resultado2.textContent.includes("=")) {
-            operando1 = resultado2.textContent.split('=')[1]
+        if (resultado2.textContent.includes("= 0")) {
+            operando1 = resultado2.textContent.split('= 0')[1]
+            resultado2.textContent = operando1 + " % "
+            operacion = "%"
+            limpiar()
+        }
+        else {
+            operando1 = resultado.textContent
+            operacion = "%"
+            limpiar()
+            resultado2.textContent = resultado2.textContent + " % "
         }
     };
 
     exponencial.onclick = function (e) {
-        operando1 = resultado.textContent
-        operacion = "**"
-        limpiar()
-        resultado2.textContent = resultado2.textContent + " ! "
         if (resultado2.textContent.includes("=")) {
             operando1 = resultado2.textContent.split('=')[1]
+            resultado2.textContent = operando1 + " ^ "
+            operacion = "**"
+            limpiar()
+        }
+        else {
+            operando1 = resultado.textContent
+            operacion = "**"
+            limpiar()
+            resultado2.textContent = resultado2.textContent + " ^ "
         }
     };
 
     igual.onclick = function (e) {
         operando2 = resultado.textContent
+        var result = resultado2.textContent
         resolver()
-        resultado2.textContent = resultado2.textContent + " = " + resultado.innerHTML
+        resultado2.textContent = result + " = " + resultado.innerHTML
     };
+
+    factorial.onclick = function (e) {
+        if (resultado2.textContent.includes("=")) {
+            operando1 = resultado2.textContent.split('=')[1]
+            operacion = "!"
+            var cantidad1 = operando1
+            resolver()
+            resultado2.textContent = cantidad1 + "! = " + resultado.textContent
+        }
+        else {
+            operando1 = resultado.textContent
+            operacion = "!"
+            var result = resultado2.textContent
+            resolver()
+            resultado2.textContent = result + "! = " + resultado.textContent
+        }
+    };
+
+    factorialSuma.onclick = function (e) {
+        if (resultado2.textContent.includes("=")) {
+            operando1 = resultado2.textContent.split('=')[1]
+            operacion = "!+"
+            var cantidad1 = operando1
+            resolver()
+            resultado2.textContent = cantidad1 + "!+ = " + resultado.textContent
+        }
+        else {
+            operando1 = resultado.textContent
+            operacion = "!+"
+            var result = resultado2.textContent
+            resolver()
+            resultado2.textContent = result + "!+ = " + resultado.textContent
+        }
+    };
+
+    alCuadrado.onclick = function (e) {
+        if (resultado2.textContent.includes("=")) {
+            operando1 = resultado2.textContent.split('=')[1]
+            operacion = "2"
+            var cantidad1 = operando1
+            resolver()
+            resultado2.textContent = cantidad1 + "² = " + resultado.textContent
+        }
+        else {
+            operando1 = resultado.textContent
+            operacion = "2"
+            var result = resultado2.textContent
+            resolver()
+            resultado2.textContent = result + "² = " + resultado.textContent
+        }
+    };
+
+    alCubo.onclick = function (e) {
+        if (resultado2.textContent.includes("=")) {
+            operando1 = resultado2.textContent.split('=')[1]
+            operacion = "3"
+            var cantidad1 = operando1
+            resolver()
+            resultado2.textContent = cantidad1 + "³ = " + resultado.textContent
+        }
+        else {
+            operando1 = resultado.textContent
+            operacion = "3"
+            var result = resultado2.textContent
+            resolver()
+            resultado2.textContent = result + "³ = " + resultado.textContent
+        }
+    };
+
+    raiz.onclick = function (e) {
+        if (resultado2.textContent.includes("=")) {
+            operando1 = resultado2.textContent.split('=')[1]
+            operacion = "raiz"
+            var cantidad1 = operando1
+            resolver()
+            resultado2.textContent = cantidad1 + " √ = " + resultado.textContent
+        }
+        else {
+            operando1 = resultado.textContent
+            operacion = "raiz"
+            var result = resultado2.textContent
+            resolver()
+            resultado2.textContent = result + " √ = " + resultado.textContent
+        }
+    };
+
+    pi.onclick = function (e) {
+        if (resultado2.textContent.includes("=")) {
+            operando1 = resultado2.textContent.split('=')[1]
+            operacion = "pi"
+            var cantidad1 = operando1
+            resolver()
+            resultado2.textContent = cantidad1 + " * π = " + resultado.textContent
+        }
+        else {
+            operando1 = resultado.textContent
+            operacion = "pi"
+            var result = resultado2.textContent
+            resolver()
+            resultado2.textContent = result + " * π = " + resultado.textContent
+        }
+    };
+
+    sign.onclick = function (e) {
+        if (resultado2.textContent.includes("=")) {
+            operando1 = resultado2.textContent.split('=')[1]
+            resultado2.textContent = operando1 + " +- "
+            operacion = "sign"
+            limpiar()
+        }
+        else {
+            operando1 = resultado.textContent
+            operacion = "sign"
+            limpiar()
+            resultado2.textContent = resultado2.textContent + " +- "
+        }
+    };
+
+
+    // FUNCIÓN FACTORIAL
+    function formulafactorial(num) {
+        var total = 1;
+        if (num == 0) {
+            total = 1;
+        }
+        for (var i = 1; i <= num; i++) {
+            total *= i;
+        }
+        return total;
+    }
 
 
     //METODOS
     function limpiar() {
-        resultado.textContent = " "
+        if (resultado2.textContent.includes("+")) {
+            resultado2.textContent = resultado2.textContent.split("+")[0] + " + "
+            operacion = "+"
+        }
 
+        if (resultado2.textContent.includes("-")) {
+            resultado2.textContent = resultado2.textContent.split("-")[0] + " - "
+            operacion = "-"
+        }
+
+        if (resultado2.textContent.includes("*")) {
+            resultado2.textContent = resultado2.textContent.split("*")[0] + " * "
+            operacion = "*"
+        }
+
+        if (resultado2.textContent.includes("/")) {
+            resultado2.textContent = resultado2.textContent.split("/")[0] + " / "
+            operacion = "/"
+        }
+
+        if (resultado2.textContent.includes("%")) {
+            resultado2.textContent = resultado2.textContent.split("%")[0] + " % "
+            operacion = "%"
+        }
+
+        if (resultado2.textContent.includes("^")) {
+            resultado2.textContent = resultado2.textContent.split("^")[0] + " ^ "
+            operacion = "**"
+        }
+        resultado.textContent = ""
     };
+
+
 
     function resetear() {
         resultado.textContent = " "
+        resultado2.textContent = " "
         operando1 = 0
         operando2 = 0
         operacion = " "
     };
+
+    function quitaUno() {
+        resultado.textContent = resultado.textContent.substring(0, resultado.textContent.length - 1);
+        resultado2.textContent = resultado2.textContent.substring(0, resultado2.textContent.length - 1);
+    }
 
     function resolver() {
         var res = 0
@@ -266,6 +493,37 @@ function init() {
                 break;
 
             case "**":
+                res = parseFloat(operando1) ** parseFloat(operando2)
+                break;
+
+            case "!":
+                res = eval(formulafactorial(operando1))
+                break;
+
+            case "!+":
+                var a = parseInt(operando1) + 1
+                res = (parseInt(operando1) * (a) / 2)
+                break;
+
+            case "2":
+                res = parseFloat(operando1) ** (2)
+                break;
+
+            case "3":
+                res = parseFloat(operando1) ** (3)
+                break;
+
+            case "raiz":
+                res = Math.sqrt(parseFloat(operando1))
+                break;
+
+            case "pi":
+                res = parseFloat(operando1) * (3.14159265358979323846)
+                break;
+
+            //FALTA CORREGIR ESTE CASE DEL SIGNO CONTRARIO +-
+
+            case "sign":
                 res = parseFloat(operando1) ** parseFloat(operando2)
                 break;
         }
