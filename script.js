@@ -38,12 +38,9 @@ function init() {
     var nueve = document.getElementById("nueve");
     var cero = document.getElementById("cero");
 
+    
     //FUNCIONALIDAD
 
-    /* document.onload = function inicio (){
-         resultado.innerHTML = 0
-         resultado2.innerHTML = 0
-     }*/
     function numnuevo() {
         if (resultado2.textContent.includes("=")) {
             resultado.textContent = "0"
@@ -606,7 +603,6 @@ function init() {
                 console.log(result);
             }
             break;*/
-
 
             case "sign":
                 res = parseFloat(operando1) * -1
