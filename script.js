@@ -1,6 +1,7 @@
 var operando1
 var operando2
 var operacion
+var pii = 3.14159
 
 function init() {
     var resultado = document.getElementById("resultado");
@@ -39,74 +40,223 @@ function init() {
 
     //FUNCIONALIDAD
 
+    /* document.onload = function inicio (){
+         resultado.innerHTML = 0
+         resultado2.innerHTML = 0
+     }*/
+    function numnuevo() {
+        if (resultado2.textContent.includes("=")) {
+            resultado.textContent = "0"
+            resultado2.textContent = "0"
+        }
+    }
+
     uno.onclick = function (e) {
-        resultado.textContent = resultado.textContent + "1"
-        parseFloat(resultado.textContent);
-        resultado2.textContent = resultado2.textContent + "1"
-        parseFloat(resultado2.textContent);
+        numnuevo()
+        if (resultado.textContent == "0") {
+            resultado.textContent = "1"
+            parseFloat(resultado.textContent);
+            if (resultado2.textContent == "0") {
+                resultado2.textContent = "1"
+                parseFloat(resultado2.textContent);
+            }
+            else {
+                resultado2.textContent = resultado2.textContent + "1"
+                parseFloat(resultado2.textContent);
+            }
+        }
+        else {
+            resultado.textContent = resultado.textContent + "1"
+            parseFloat(resultado.textContent);
+            resultado2.textContent = resultado2.textContent + "1"
+            parseFloat(resultado2.textContent);
+        }
     }
 
     dos.onclick = function (e) {
-        resultado.textContent = resultado.textContent + "2"
-        parseFloat(resultado.textContent);
-        resultado2.textContent = resultado2.textContent + "2"
-        parseFloat(resultado2.textContent);
+        numnuevo()
+        if (resultado.textContent == "0") {
+            resultado.textContent = "2"
+            parseFloat(resultado.textContent);
+            if (resultado2.textContent == "0") {
+                resultado2.textContent = "2"
+                parseFloat(resultado2.textContent);
+            }
+            else {
+                resultado2.textContent = resultado2.textContent + "2"
+                parseFloat(resultado2.textContent);
+            }
+        }
+        else {
+            resultado.textContent = resultado.textContent + "2"
+            parseFloat(resultado.textContent);
+            resultado2.textContent = resultado2.textContent + "2"
+            parseFloat(resultado2.textContent);
+        }
     }
 
     tres.onclick = function (e) {
-        resultado.textContent = resultado.textContent + "3"
-        parseFloat(resultado.textContent);
-        resultado2.textContent = resultado2.textContent + "3"
-        parseFloat(resultado2.textContent);
+        numnuevo()
+        if (resultado.textContent == "0") {
+            resultado.textContent = "3"
+            parseFloat(resultado.textContent);
+            if (resultado2.textContent == "0") {
+                resultado2.textContent = "3"
+                parseFloat(resultado2.textContent);
+            }
+            else {
+                resultado2.textContent = resultado2.textContent + "3"
+                parseFloat(resultado2.textContent);
+            }
+        }
+        else {
+            resultado.textContent = resultado.textContent + "3"
+            parseFloat(resultado.textContent);
+            resultado2.textContent = resultado2.textContent + "3"
+            parseFloat(resultado2.textContent);
+        }
     }
 
     cuatro.onclick = function (e) {
-        resultado.textContent = resultado.textContent + "4"
-        parseFloat(resultado.textContent);
-        resultado2.textContent = resultado2.textContent + "4"
-        parseFloat(resultado2.textContent);
+        numnuevo()
+        if (resultado.textContent == "0") {
+            resultado.textContent = "4"
+            parseFloat(resultado.textContent);
+            if (resultado2.textContent == "0") {
+                resultado2.textContent = "4"
+                parseFloat(resultado2.textContent);
+            }
+            else {
+                resultado2.textContent = resultado2.textContent + "4"
+                parseFloat(resultado2.textContent);
+            }
+        }
+        else {
+            resultado.textContent = resultado.textContent + "4"
+            parseFloat(resultado.textContent);
+            resultado2.textContent = resultado2.textContent + "4"
+            parseFloat(resultado2.textContent);
+        }
     }
 
     cinco.onclick = function (e) {
-        resultado.textContent = resultado.textContent + "5"
-        parseFloat(resultado.textContent);
-        resultado2.textContent = resultado2.textContent + "5"
-        parseFloat(resultado2.textContent);
+        numnuevo()
+        if (resultado.textContent == "0") {
+            resultado.textContent = "5"
+            parseFloat(resultado.textContent);
+            if (resultado2.textContent == "0") {
+                resultado2.textContent = "5"
+                parseFloat(resultado2.textContent);
+            }
+            else {
+                resultado2.textContent = resultado2.textContent + "5"
+                parseFloat(resultado2.textContent);
+            }
+        }
+        else {
+            resultado.textContent = resultado.textContent + "5"
+            parseFloat(resultado.textContent);
+            resultado2.textContent = resultado2.textContent + "5"
+            parseFloat(resultado2.textContent);
+        }
     }
 
     seis.onclick = function (e) {
-        resultado.textContent = resultado.textContent + "6"
-        parseFloat(resultado.textContent);
-        resultado2.textContent = resultado2.textContent + "6"
-        parseFloat(resultado2.textContent);
+        numnuevo()
+        if (resultado.textContent == "0") {
+            resultado.textContent = "6"
+            parseFloat(resultado.textContent);
+            if (resultado2.textContent == "0") {
+                resultado2.textContent = "6"
+                parseFloat(resultado2.textContent);
+            }
+            else {
+                resultado2.textContent = resultado2.textContent + "6"
+                parseFloat(resultado2.textContent);
+            }
+        }
+        else {
+            resultado.textContent = resultado.textContent + "6"
+            parseFloat(resultado.textContent);
+            resultado2.textContent = resultado2.textContent + "6"
+            parseFloat(resultado2.textContent);
+        }
     }
 
     siete.onclick = function (e) {
-        resultado.textContent = resultado.textContent + "7"
-        parseFloat(resultado.textContent);
-        resultado2.textContent = resultado2.textContent + "7"
-        parseFloat(resultado2.textContent);
+        numnuevo()
+        if (resultado.textContent == "0") {
+            resultado.textContent = "7"
+            parseFloat(resultado.textContent);
+            if (resultado2.textContent == "0") {
+                resultado2.textContent = "7"
+                parseFloat(resultado2.textContent);
+            }
+            else {
+                resultado2.textContent = resultado2.textContent + "7"
+                parseFloat(resultado2.textContent);
+            }
+        }
+        else {
+            resultado.textContent = resultado.textContent + "7"
+            parseFloat(resultado.textContent);
+            resultado2.textContent = resultado2.textContent + "7"
+            parseFloat(resultado2.textContent);
+        }
     }
 
     ocho.onclick = function (e) {
-        resultado.textContent = resultado.textContent + "8"
-        parseFloat(resultado.textContent);
-        resultado2.textContent = resultado2.textContent + "8"
-        parseFloat(resultado2.textContent);
+        numnuevo()
+        if (resultado.textContent == "0") {
+            resultado.textContent = "8"
+            parseFloat(resultado.textContent);
+            if (resultado2.textContent == "0") {
+                resultado2.textContent = "8"
+                parseFloat(resultado2.textContent);
+            }
+            else {
+                resultado2.textContent = resultado2.textContent + "8"
+                parseFloat(resultado2.textContent);
+            }
+        }
+        else {
+            resultado.textContent = resultado.textContent + "8"
+            parseFloat(resultado.textContent);
+            resultado2.textContent = resultado2.textContent + "8"
+            parseFloat(resultado2.textContent);
+        }
     }
 
     nueve.onclick = function (e) {
-        resultado.textContent = resultado.textContent + "9"
-        parseFloat(resultado.textContent);
-        resultado2.textContent = resultado2.textContent + "9"
-        parseFloat(resultado2.textContent);
+        numnuevo()
+        if (resultado.textContent == "0") {
+            resultado.textContent = "9"
+            parseFloat(resultado.textContent);
+            if (resultado2.textContent == "0") {
+                resultado2.textContent = "9"
+                parseFloat(resultado2.textContent);
+            }
+            else {
+                resultado2.textContent = resultado2.textContent + "9"
+                parseFloat(resultado2.textContent);
+            }
+        }
+        else {
+            resultado.textContent = resultado.textContent + "9"
+            parseFloat(resultado.textContent);
+            resultado2.textContent = resultado2.textContent + "9"
+            parseFloat(resultado2.textContent);
+        }
     }
 
     cero.onclick = function (e) {
-        resultado.textContent = resultado.textContent + "0"
-        parseFloat(resultado.textContent);
-        resultado2.textContent = resultado2.textContent + "0"
-        parseFloat(resultado2.textContent);
+        numnuevo()
+        if (resultado.textContent != "0") {
+            resultado.textContent = resultado.textContent + "0"
+            parseFloat(resultado.textContent);
+            resultado2.textContent = resultado2.textContent + "0"
+            parseFloat(resultado2.textContent);
+        }
     }
 
     punto.onclick = function (e) {
@@ -120,68 +270,10 @@ function init() {
         }
     }
 
-    suma.onclick = function (e) {
-        resultado2.textContent = resultado2.textContent + " + "
-    }
-
-    resta.onclick = function (e) {
-        resultado.textContent = resultado.textContent + " - "
-        resultado2.textContent = resultado2.textContent + " - "
-    }
-
-    multiplicacion.onclick = function (e) {
-        resultado2.textContent = resultado2.textContent + " * "
-    }
-
-    division.onclick = function (e) {
-        resultado2.textContent = resultado2.textContent + " / "
-    }
-
-    factorial.onclick = function (e) {
-        resultado2.textContent = resultado2.textContent + " !"
-    }
-
-    raiz.onclick = function (e) {
-        resultado2.textContent = resultado2.textContent + " √ "
-    }
-
-    factorialSuma.onclick = function (e) {
-        resultado2.textContent = resultado2.textContent + " !+"
-    }
-
-    residuo.onclick = function (e) {
-        resultado2.textContent = resultado2.textContent + " ! "
-    }
-
-    alCuadrado.onclick = function (e) {
-        resultado2.textContent = resultado2.textContent + "²"
-    }
-
-    exponencial.onclick = function (e) {
-        resultado2.textContent = resultado2.textContent + " ^ "
-    }
-
-    alCubo.onclick = function (e) {
-        resultado2.textContent = resultado2.textContent + "³"
-    }
-
-    pi.onclick = function (e) {
-        resultado2.textContent = resultado2.textContent + " * π "
-    }
-
-    igual.onclick = function (e) {
-        resultado2.textContent = resultado2.textContent + " = "
-    }
-
-    sign.onclick = function (e) {
-        resultado2.textContent = resultado2 + " +- "
-    }
-
-
     //OPERACIONES
 
     borrar.onclick = function (e) {
-        limpiar()
+        limpiar(true)
     };
 
     reset.onclick = function (e) {
@@ -192,19 +284,38 @@ function init() {
         quitaUno()
     }
 
+    function validarCero(symbol) {
+        if (validarSigno() && !resultado2.textContent.includes("="))
+            return
+        if (resultado2.textContent.trim() != "0") {
+            if (resultado2.textContent.includes("=")) {
+                operando1 = resultado2.textContent.split('=')[1]
+                resultado2.textContent = operando1 + symbol
+                operacion = symbol.trim()
+                limpiar(false)
+            }
+            else {
+                operando1 = resultado.textContent
+                operacion = symbol.trim()
+                limpiar(false)
+                resultado2.textContent = resultado2.textContent + symbol
+            }
+        }
+    }
+
+    function validarSigno() {
+        var tieneSigno = false;
+        if (resultado2.textContent.includes("+")
+            || resultado2.textContent.includes("*")
+            || resultado2.textContent.includes("/"))
+            tieneSigno = true;
+        else
+            tieneSigno = false
+        return tieneSigno
+    }
+
     suma.onclick = function (e) {
-        if (resultado2.textContent.includes("=")) {
-            operando1 = resultado2.textContent.split('=')[1]
-            resultado2.textContent = operando1 + " + "
-            operacion = "+"
-            limpiar()
-        }
-        else {
-            operando1 = resultado.textContent
-            operacion = "+"
-            limpiar()
-            resultado2.textContent = resultado2.textContent + " + "
-        }
+        validarCero(" + ")
     };
 
     resta.onclick = function (e) {
@@ -212,7 +323,7 @@ function init() {
             operando1 = resultado2.textContent.split('=')[1]
             resultado2.textContent = operando1 + " - "
             operacion = "-"
-            limpiar()
+            limpiar(false)
         }
         else {
             if (resultado.textContent == " ") {
@@ -223,77 +334,35 @@ function init() {
             else {
                 operando1 = resultado.textContent
                 operacion = "-"
-                limpiar()
+                limpiar(false)
                 resultado2.textContent = resultado2.textContent + " - "
             }
         }
     };
 
     multiplicacion.onclick = function (e) {
-        if (resultado2.textContent.includes("=")) {
-            operando1 = resultado2.textContent.split('=')[1]
-            resultado2.textContent = operando1 + " * "
-            operacion = "*"
-            limpiar()
-        }
-        else {
-            operando1 = resultado.textContent
-            operacion = "*"
-            limpiar()
-            resultado2.textContent = resultado2.textContent + " * "
-        }
+        validarCero(" * ")
     };
 
     division.onclick = function (e) {
-        if (resultado2.textContent.includes("=")) {
-            operando1 = resultado2.textContent.split('=')[1]
-            resultado2.textContent = operando1 + " / "
-            operacion = "/"
-            limpiar()
-        }
-        else {
-            operando1 = resultado.textContent
-            operacion = "/"
-            limpiar()
-            resultado2.textContent = resultado2.textContent + " / "
-        }
+        validarCero(" / ")
     };
 
     residuo.onclick = function (e) {
-        if (resultado2.textContent.includes("= 0")) {
-            operando1 = resultado2.textContent.split('= 0')[1]
-            resultado2.textContent = operando1 + " % "
-            operacion = "%"
-            limpiar()
-        }
-        else {
-            operando1 = resultado.textContent
-            operacion = "%"
-            limpiar()
-            resultado2.textContent = resultado2.textContent + " % "
-        }
+        validarCero(" % ")
     };
 
     exponencial.onclick = function (e) {
-        if (resultado2.textContent.includes("=")) {
-            operando1 = resultado2.textContent.split('=')[1]
-            resultado2.textContent = operando1 + " ^ "
-            operacion = "**"
-            limpiar()
-        }
-        else {
-            operando1 = resultado.textContent
-            operacion = "**"
-            limpiar()
-            resultado2.textContent = resultado2.textContent + " ^ "
-        }
+        validarCero(" ^ ")
     };
 
     igual.onclick = function (e) {
-        operando2 = resultado.textContent
-        var result = resultado2.textContent
-        resolver()
-        resultado2.textContent = result + " = " + resultado.innerHTML
+        if (!resultado2.textContent.includes("=")) {
+            operando2 = resultado.textContent
+            var result = resultado2.textContent
+            resolver()
+            resultado2.textContent = result + " = " + resultado.innerHTML
+        }
     };
 
     factorial.onclick = function (e) {
@@ -365,36 +434,20 @@ function init() {
     };
 
     raiz.onclick = function (e) {
+        // validarCero(" √")
         if (resultado2.textContent.includes("=")) {
             operando1 = resultado2.textContent.split('=')[1]
             operacion = "raiz"
             var cantidad1 = operando1
             resolver()
-            resultado2.textContent = cantidad1 + " √ = " + resultado.textContent
+            resultado2.textContent = " √" + cantidad1 + " = " + resultado.textContent
         }
         else {
             operando1 = resultado.textContent
             operacion = "raiz"
             var result = resultado2.textContent
             resolver()
-            resultado2.textContent = result + " √ = " + resultado.textContent
-        }
-    };
-
-    pi.onclick = function (e) {
-        if (resultado2.textContent.includes("=")) {
-            operando1 = resultado2.textContent.split('=')[1]
-            operacion = "pi"
-            var cantidad1 = operando1
-            resolver()
-            resultado2.textContent = cantidad1 + " * π = " + resultado.textContent
-        }
-        else {
-            operando1 = resultado.textContent
-            operacion = "pi"
-            var result = resultado2.textContent
-            resolver()
-            resultado2.textContent = result + " * π = " + resultado.textContent
+            resultado2.textContent = " √" + result + " = " + resultado.textContent
         }
     };
 
@@ -404,14 +457,16 @@ function init() {
             operacion = "sign"
             var cantidad1 = operando1
             resolver()
-            resultado2.textContent = cantidad1 + " +- = " + resultado.textContent
+            resultado2.textContent = cantidad1 + resultado.textContent
         }
         else {
-            operando1 = resultado.textContent
-            operacion = "sign"
-            var result = resultado2.textContent
-            resolver()
-            resultado2.textContent = result + " +- = " + resultado.textContent
+            if (resultado.textContent.trim() != "") {
+                operando1 = resultado.textContent
+                operacion = "sign"
+                var result = resultado2.textContent
+                resolver()
+                resultado2.textContent = resultado.textContent
+            }
         }
     };
 
@@ -430,44 +485,56 @@ function init() {
 
 
     //METODOS
-    function limpiar() {
+    function limpiar(esCE) {
+        var esOperacion = false
+        var zero = 0
         if (resultado2.textContent.includes("+")) {
             resultado2.textContent = resultado2.textContent.split("+")[0] + " + "
             operacion = "+"
+            esOperacion = true
         }
 
         if (resultado2.textContent.includes("-")) {
             resultado2.textContent = resultado2.textContent.split("-")[0] + " - "
             operacion = "-"
+            esOperacion = true
         }
 
         if (resultado2.textContent.includes("*")) {
             resultado2.textContent = resultado2.textContent.split("*")[0] + " * "
             operacion = "*"
+            esOperacion = true
         }
 
         if (resultado2.textContent.includes("/")) {
             resultado2.textContent = resultado2.textContent.split("/")[0] + " / "
             operacion = "/"
+            esOperacion = true
         }
 
         if (resultado2.textContent.includes("%")) {
             resultado2.textContent = resultado2.textContent.split("%")[0] + " % "
             operacion = "%"
+            esOperacion = true
         }
 
         if (resultado2.textContent.includes("^")) {
             resultado2.textContent = resultado2.textContent.split("^")[0] + " ^ "
-            operacion = "**"
+            operacion = "^"
+            esOperacion = true
         }
-        resultado.textContent = ""
+        console.log("la bandera es " + esCE)
+        if (esCE && !esOperacion) {
+            resultado2.textContent = zero
+        }
+        resultado.textContent = zero
     };
 
 
 
     function resetear() {
-        resultado.textContent = ""
-        resultado2.textContent = ""
+        resultado.textContent = 0
+        resultado2.textContent = 0
         operando1 = 0
         operando2 = 0
         operacion = ""
@@ -502,7 +569,7 @@ function init() {
                 res = (parseFloat(operando1) % parseFloat(operando2))
                 break;
 
-            case "**":
+            case "^":
                 res = parseFloat(operando1) ** parseFloat(operando2)
                 break;
 
@@ -527,16 +594,23 @@ function init() {
                 res = Math.sqrt(parseFloat(operando1))
                 break;
 
-            case "pi":
-                res = parseFloat(operando1) * (3.14159265358979323846)
-                break;
+            /*if (contentShowOperations.innerHTML.charCodeAt(0) < 48 || contentShowOperations.innerHTML.charCodeAt(0) > 57) {
+                var secondPart = eval(secondNumber + "+" + 1);
+                result = eval((secondNumber * secondPart) / 2);
+                console.log(secondPart);
+                console.log(result);
+            } else {
+                var firstPart = eval(firstNumber + "+" + 1);
+                result = eval((firstNumber * firstPart) / 2);
+                console.log(firstPart);
+                console.log(result);
+            }
+            break;*/
 
-            //FALTA CORREGIR ESTE CASE DEL SIGNO CONTRARIO +-
 
             case "sign":
-                console.log(operando1)
-                console.log(parseFloat(operando1))
                 res = parseFloat(operando1) * -1
+                break;
         }
 
         resetear()
